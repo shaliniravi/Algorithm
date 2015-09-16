@@ -1,6 +1,5 @@
 package week1;
 
-import edu.princeton.cs.algs4.Out;
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.StdStats;
@@ -17,7 +16,7 @@ public class PercolationStats {
 
   private Percolation percolation;
   private final double[] threshold;
-  private final int testcases;
+  private final int tests;
 
   /**
    * Constructor which performs T independent experiments on an N-by-N grid.
@@ -29,21 +28,21 @@ public class PercolationStats {
    */
   public PercolationStats(int sites, int testCases) {
 
-    testcases = testCases;
+    tests = testCases;
     // base case
     if (sites <= 0 || testCases <= 0) {
       throw new IllegalArgumentException();
     }
-    threshold = new double[testCases];
+    threshold = new double[tests];
 
-    for (int i = 0; i < testCases; i++) {
+    for (int i = 0; i < tests; i++) {
       percolation = new Percolation(sites);
       int count = 0;
-      int row = StdRandom.uniform(sites);
-      int column = StdRandom.uniform(sites);
-
+      
       // perform until the system percolates
       while (!percolation.percolates()) {
+        int row = StdRandom.uniform(sites) + 1;
+        int column = StdRandom.uniform(sites) + 1;
 
         // checks if the given site is open
         if (!percolation.isOpen(row, column)) {
@@ -52,7 +51,7 @@ public class PercolationStats {
         }
       }
 
-      threshold[i] = count / (sites * sites);
+      threshold[i] = Integer.valueOf(count).doubleValue()  / (sites * sites);
     }
   }
 
@@ -64,7 +63,7 @@ public class PercolationStats {
   public double confidenceHi() {
     double mean = mean();
     double stddev = stddev();
-    double confidenceHi = mean + 1.96 * stddev / Math.sqrt(testcases);
+    double confidenceHi = mean + 1.96 * stddev / Math.sqrt(tests);
     return confidenceHi;
   }
 
@@ -76,7 +75,7 @@ public class PercolationStats {
   public double confidenceLo() {
     double mean = mean();
     double stddev = stddev();
-    double confidenceLo = mean - 1.96 * stddev / Math.sqrt(testcases);
+    double confidenceLo = mean - 1.96 * stddev / Math.sqrt(tests);
     return confidenceLo;
   }
 

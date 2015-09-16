@@ -87,7 +87,11 @@ public class Percolation {
     // validate the row and column values
     validate(row, column);
     final int pos = xyTo1D(row, column);
-    return field[pos];
+    // checks if the site is blocked or not
+    if(field[pos] == true) {
+      return true;
+    }
+    return false;
   }
 
   //
@@ -207,9 +211,9 @@ public class Percolation {
    */
   private int xyTo1D(int row, int column) {
 
-    row = row - 1;
-    column = column - 1;
-    return row * rowLength + column;
+    int newRow = row - 1;
+    int newColumn = column - 1;
+    return newRow * rowLength + newColumn;
   }
 
 }
