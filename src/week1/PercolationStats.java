@@ -5,10 +5,11 @@ import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.StdStats;
 
 /**
- * Compilation: javac PercolationStats.java Execution: java PercolationStats 200
- * 100 Dependencies: algs4.jar, Percolation.java This program estimates the
- * value of the percolation threshold via Monte Carlo simulation. Author :
- * Shalini
+ * Compilation: javac PercolationStats.java 
+ * Execution: java PercolationStats 200 100
+ * Dependencies: algs4.jar, Percolation.java 
+ * This program estimates the value of the percolation threshold via Monte Carlo simulation. 
+ * Author : Shalini
  */
 public class PercolationStats {
 
@@ -19,10 +20,8 @@ public class PercolationStats {
     /**
      * Constructor which performs T independent experiments on an N-by-N grid.
      * 
-     * @param sites
-     *            No of Sites
-     * @param testCases
-     *            No of TestCases
+     * @param sites       No of Sites
+     * @param testCases   No of TestCases
      */
     public PercolationStats(int sites, int testCases) {
 
@@ -54,9 +53,9 @@ public class PercolationStats {
     }
 
     /**
-     * Calculates high endpoint of 95% confidence interval.
+     * Calculates high end point of 95% confidence interval.
      * 
-     * @return high endpoint of 95% confidence interval
+     * @return high end point of 95% confidence interval
      */
     public double confidenceHi() {
         double mean = mean();
@@ -66,9 +65,9 @@ public class PercolationStats {
     }
 
     /**
-     * Calculates low endpoint of 95% confidence interval.
+     * Calculates low end point of 95% confidence interval.
      * 
-     * @return low endpoint of 95% confidence interval
+     * @return low end point of 95% confidence interval
      */
     public double confidenceLo() {
         double mean = mean();
