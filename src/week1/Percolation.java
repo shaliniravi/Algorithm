@@ -13,8 +13,8 @@ public class Percolation {
 
   private final int size; // size of the N * N matrix
   private final boolean[] field; // boolean array to block or open the site
-  WeightedQuickUnionUF quickUnionUF1; // Used to avoid backwash
-  WeightedQuickUnionUF quickUnionUF2;
+  private WeightedQuickUnionUF quickUnionUF1; // Used to avoid backwash
+  private WeightedQuickUnionUF quickUnionUF2;
   private final int topRoot; // virtual top root
   private final int bottomRoot; // virtual bottom root
   private final int rowLength;
