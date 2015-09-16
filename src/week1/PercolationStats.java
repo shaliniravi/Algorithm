@@ -1,6 +1,7 @@
 package week1;
 
 import edu.princeton.cs.algs4.Out;
+import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.StdStats;
 
@@ -10,7 +11,7 @@ import edu.princeton.cs.algs4.StdStats;
  * 100 Dependencies: algs4.jar, Percolation.java 
  * This program estimates the
  * value of the percolation threshold via Monte Carlo simulation. 
- * Author : Shalini
+ * Author :Shalini
  */
 public class PercolationStats {
 
@@ -107,21 +108,15 @@ public class PercolationStats {
    */
   public static void main(String[] args) {
 
-    Out out = new Out();
-    int testRun = Integer.parseInt(args[0]);
-    int grid = Integer.parseInt(args[1]);
+    int grid = Integer.parseInt(args[0]);
+    int testRun = Integer.parseInt(args[1]);    
+   
+    PercolationStats percolationStats = new PercolationStats(grid, testRun);
 
-    PercolationStats percolationStats = new PercolationStats(testRun, grid);
-
-    double mean = percolationStats.mean();
-    double stddev = percolationStats.stddev();
-    double confidenceLo = percolationStats.confidenceLo();
-    double confidenceHi = percolationStats.confidenceHi();
-
-    out.printf("mean                    = %f\n", mean);
-    out.printf("stddev                  = %f\n", stddev);
-    out.printf("95%% confidence interval = %f, %f\n", confidenceLo,
-        confidenceHi);
-    out.close();
+    StdOut.printf("mean                    = %f\n", percolationStats.mean());
+    StdOut.printf("stddev                  = %f\n",  percolationStats.stddev());
+    StdOut.printf("95%% confidence interval = %f, %f\n",  percolationStats.confidenceLo(),
+        percolationStats.confidenceHi());
+    
   }
 }
