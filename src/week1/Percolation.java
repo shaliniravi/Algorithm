@@ -3,7 +3,7 @@ package week1;
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 /**
- * Compilation: javac Percolation.java Execution: API only. Must be called from another class.
+ * Compilation: javac Percolation.java 
  * Dependencies: algs4.jar, WeightedQuickUnionUF.java This program estimates the value of the
  * percolation threshold via Monte Carlo simulation. Author : Shalini
  */
