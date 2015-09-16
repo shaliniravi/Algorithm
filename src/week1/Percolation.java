@@ -4,8 +4,9 @@ import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 /**
  * Compilation: javac Percolation.java 
- * Dependencies: algs4.jar, WeightedQuickUnionUF.java This program estimates the value of the
- * percolation threshold via Monte Carlo simulation. Author : Shalini
+ * Dependencies: algs4.jar, WeightedQuickUnionUF.java 
+ * This program is an API to used to find threshold via Monte Carlo simulation.
+ * Author : Shalini
  */
 
 public class Percolation {
