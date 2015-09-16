@@ -88,7 +88,7 @@ public class Percolation {
     validate(row, column);
     final int pos = xyTo1D(row, column);
     // checks if the site is blocked or not
-    if(field[pos] == true) {
+    if (field[pos]) {
       return true;
     }
     return false;
@@ -122,11 +122,7 @@ public class Percolation {
   public boolean percolates() {
 
     // checks if the virtual top root and bottom root are connected.
-    if (quickUnionUF1.connected(topRoot, bottomRoot)) {
-      return true;
-    } else {
-      return false;
-    }
+      return quickUnionUF1.connected(topRoot, bottomRoot);
 
   }
 
